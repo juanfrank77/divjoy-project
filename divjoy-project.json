@@ -1,0 +1,4627 @@
+{
+  "data": [
+    {
+      "type": "instance",
+      "subtype": "app-instance",
+      "componentId": "app",
+      "id": 4010090,
+      "isVisible": true,
+      "children": []
+    }
+  ],
+  "components": [
+    {
+      "id": "app",
+      "type": "component",
+      "subtype": "app-component",
+      "globalStyle": "// COLORS\n$primary: #00d1b2;\n$info: #209CEE;\n$success: #23D160;\n$warning: #FFDD57;\n$danger: #FF3860;\n$light: #F5F5F5;\n$dark: #363636;\n\n// TEXT\n$text: #4A4A4A;\n$link: #3273DC;\n$body-family: BlinkMacSystemFont, -apple-system, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", \"Helvetica\", \"Arial\", sans-serif;\n$title-family: false;\n$button-family: false;\n\n// BREAKPOINTS\n$gap: 32px;\n$tablet: 769px;\n$desktop: 960px + (2*$gap);\n$widescreen: 1152px + (2*$gap);\n$fullhd: 1344px + (2*$gap);\n$widescreen-enabled: true;\n$fullhd-enabled: false;\n\n// LAYOUT\n$section-padding: 3rem 1.5rem;\n$section-padding-medium: 6rem 1.5rem;\n$section-padding-large: 9rem 1.5rem;\n\n// SPACING HELPERS (.mt-3, .mx-auto, .p-5, etc)\n$spacing-shortcuts: (\"margin\": \"m\", \"padding\": \"p\");\n$spacing-directions: (\"top\": \"t\", \"right\": \"r\", \"bottom\": \"b\", \"left\": \"l\");\n$spacing-horizontal: \"x\";\n$spacing-vertical: \"y\";\n$spacing-values: (\"0\": 0, \"1\": 0.25rem, \"2\": 0.5rem, \"3\": 1rem, \"4\": 1.5rem, \"5\": 3rem, \"auto\": auto);\n\n// SEE DOCS FOR MORE: \n// https://bit.ly/30UvE5O\n\n// IMPORT BULMA\n@import \"~bulma/bulma.sass\";",
+      "isVisible": true,
+      "code": "",
+      "children": [
+        {
+          "type": "pages",
+          "id": 6527648,
+          "isVisible": true,
+          "children": [
+            {
+              "type": "instance",
+              "subtype": "page-instance",
+              "componentId": 8934968,
+              "id": 6833851,
+              "isVisible": true,
+              "children": []
+            },
+            {
+              "type": "instance",
+              "subtype": "page-instance",
+              "componentId": 6628204,
+              "id": 7812014,
+              "isVisible": true,
+              "children": []
+            },
+            {
+              "type": "instance",
+              "subtype": "page-instance",
+              "componentId": 3412667,
+              "id": 8784142,
+              "isVisible": true,
+              "children": []
+            },
+            {
+              "type": "instance",
+              "subtype": "page-instance",
+              "componentId": 3780013,
+              "id": 6612904,
+              "isVisible": true,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "nameFormatted": "MyApp",
+      "nameStyleModule": "MyApp",
+      "modulePath": "src/pages/_app"
+    },
+    {
+      "type": "component",
+      "name": "Navbar Container",
+      "id": 3871614,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "nav",
+          "classNames": [
+            "navbar"
+          ],
+          "children": [
+            {
+              "type": "children",
+              "id": 3170614,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "classNameExpressions": [
+            {
+              "js": "color",
+              "classNames": [
+                "is-{color}"
+              ]
+            },
+            {
+              "js": "spaced",
+              "classNames": [
+                "is-spaced"
+              ]
+            },
+            {
+              "js": "className",
+              "classNames": [
+                "{className}"
+              ]
+            }
+          ],
+          "id": 6664260,
+          "attributes": "{\n\t...otherProps\n}",
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "style": "",
+          "propsArray": [
+            {
+              "key": null,
+              "value": "otherProps",
+              "isString": false,
+              "type": "SpreadElement"
+            }
+          ]
+        }
+      ],
+      "code": "\tconst { color, spaced, className, ...otherProps } = props;\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "NavbarContainer",
+      "nameStyleModule": "NavbarContainer",
+      "modulePath": "src/components/NavbarContainer"
+    },
+    {
+      "type": "component",
+      "name": "Navbar",
+      "code": "  const auth = useAuth();\n\tconst router = useRouter();\n\tconst [menuOpen, setMenuOpen] = useState(false);\n",
+      "id": 4913234,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 3871614,
+          "attributes": "{\n\tspaced: props.spaced,\n  color: props.color\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "navbar-brand"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "navbar-item"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "attributes": "{\n  href: '/' \n}",
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "img",
+                              "attributes": "{\n  src: props.logo,\n  alt: \"Logo\"\n}",
+                              "classNames": [
+                                "image"
+                              ],
+                              "id": 8075910,
+                              "isVisible": true,
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": [
+                                {
+                                  "key": "src",
+                                  "value": "props.logo",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "alt",
+                                  "value": "Logo",
+                                  "isString": true,
+                                  "type": "StringLiteral"
+                                }
+                              ]
+                            }
+                          ],
+                          "id": 2525715,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "",
+                          "classNames": [],
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "/",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        }
+                      ],
+                      "id": 8146975,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "id": 6684716,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNames": [],
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": [],
+                          "propsArray": []
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "id": 5720571,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNames": [],
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": [],
+                          "propsArray": []
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "id": 9105580,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNames": [],
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": [],
+                          "propsArray": []
+                        }
+                      ],
+                      "classNames": [
+                        "navbar-burger",
+                        "burger"
+                      ],
+                      "attributes": "{\n  onClick: () => setMenuOpen(!menuOpen)\n}",
+                      "classNameExpressions": [
+                        {
+                          "js": "menuOpen",
+                          "classNames": [
+                            "is-active"
+                          ]
+                        }
+                      ],
+                      "id": 1998027,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "style": "",
+                      "propsArray": [
+                        {
+                          "key": "onClick",
+                          "value": "() => setMenuOpen(!menuOpen)",
+                          "isString": false,
+                          "type": "ArrowFunctionExpression"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 3192103,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                },
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "navbar-menu"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "navbar-end"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "Home",
+                              "id": 2319246,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "attributes": "{\n  href: '/' \n}",
+                          "id": 6269204,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "Home",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "/",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "About",
+                              "id": 3029535,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "attributes": "{\n  href: '/about' \n}",
+                          "id": 8359544,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "About",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "/about",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "attributes": "{\n  href: '/now' \n}",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "Now",
+                              "id": 605389,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "id": 5496177,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "Now",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "/now",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "attributes": "{\n  href: 'https://blog.juanfgonzalez.com' \n}",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "Blog",
+                              "id": 1084857,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "id": 6557004,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "Blog",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "https://blog.juanfgonzalez.com",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "attributes": "{\n  href: 'https://garden.juanfgonzalez.com' \n}",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "Garden",
+                              "id": 6360263,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "id": 1541859,
+                          "isVisible": false,
+                          "image": "",
+                          "name": "Garden",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "https://garden.juanfgonzalez.com",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "a",
+                          "attributes": "{\n  href: '/contact' \n}",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "Contact",
+                              "id": 8439451,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "classNames": [
+                            "navbar-item"
+                          ],
+                          "id": 5323858,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "Contact",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": [
+                            {
+                              "key": "href",
+                              "value": "/contact",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        }
+                      ],
+                      "id": 4733153,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "classNameExpressions": [
+                    {
+                      "js": "menuOpen",
+                      "classNames": [
+                        "is-active"
+                      ]
+                    }
+                  ],
+                  "id": 2776218,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 8399104,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 4040514,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "spaced",
+              "value": "props.spaced",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Navigation",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "nameFormatted": "Navbar",
+      "nameStyleModule": "NavbarComponent",
+      "modulePath": "src/components/Navbar"
+    },
+    {
+      "type": "component",
+      "name": "Section",
+      "id": 1079246,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "classNames": [
+            "is-block",
+            "is-relative",
+            "is-small",
+            "section"
+          ],
+          "classNameExpressions": [
+            {
+              "js": "color",
+              "classNames": [
+                "is-{color}"
+              ]
+            },
+            {
+              "js": "size",
+              "classNames": [
+                "is-{size}"
+              ]
+            },
+            {
+              "js": "className",
+              "classNames": [
+                "{className}"
+              ]
+            }
+          ],
+          "children": [
+            {
+              "type": "if",
+              "js": "backgroundImage",
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 1986700,
+                  "attributes": "{\n\timage: backgroundImage,\n  opacity: backgroundImageOpacity,\n  repeat: backgroundImageRepeat\n}",
+                  "id": 6976618,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "image",
+                      "value": "backgroundImage",
+                      "isString": false,
+                      "type": "Identifier"
+                    },
+                    {
+                      "key": "opacity",
+                      "value": "backgroundImageOpacity",
+                      "isString": false,
+                      "type": "Identifier"
+                    },
+                    {
+                      "key": "repeat",
+                      "value": "backgroundImageRepeat",
+                      "isString": false,
+                      "type": "Identifier"
+                    }
+                  ]
+                }
+              ],
+              "id": 4689902,
+              "isVisible": true
+            },
+            {
+              "type": "children",
+              "id": 6313629,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "attributes": "{\n\t...otherProps\n}",
+          "style": "// Add light border if two white\n// sections next to each other.\n.is-white + &.is-white {\n  border-top: 2px solid #F0F0F0;\n}",
+          "id": 7573224,
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "propsArray": [
+            {
+              "key": null,
+              "value": "otherProps",
+              "isString": false,
+              "type": "SpreadElement"
+            }
+          ]
+        }
+      ],
+      "code": "\tconst {\n    color, \n    size, \n    backgroundImage,\n    backgroundImageOpacity,\n    backgroundImageRepeat,\n    className,\n    children,\n    // Passed to section element\n    ...otherProps \n  } = props;\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "Section",
+      "nameStyleModule": "SectionComponent",
+      "modulePath": "src/components/Section"
+    },
+    {
+      "type": "component",
+      "name": "Section Header",
+      "id": 5415335,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "header",
+          "children": [
+            {
+              "type": "if",
+              "js": "props.title",
+              "id": 3832557,
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "h1",
+                  "classNames": [
+                    "title",
+                    "has-text-weight-bold"
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "{props.title}",
+                      "id": 3346646,
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "classNameExpressions": [
+                    {
+                      "js": "props.size",
+                      "classNames": [
+                        "is-{props.size}"
+                      ]
+                    },
+                    {
+                      "js": "props.size === 1",
+                      "classNames": [
+                        "is-size-2-mobile"
+                      ]
+                    },
+                    {
+                      "js": "props.spaced",
+                      "classNames": [
+                        "is-spaced"
+                      ]
+                    }
+                  ],
+                  "id": 5428871,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "isVisible": true
+            }
+          ],
+          "classNameExpressions": [
+            {
+              "js": "props.className",
+              "classNames": [
+                "{props.className}"
+              ]
+            }
+          ],
+          "style": "// Add bottom margin if element below\n&:not(:last-child){\n\tmargin-bottom: 3rem;\n}",
+          "id": 4841502,
+          "name": "Header",
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "classNames": [],
+          "propsArray": []
+        }
+      ],
+      "code": "\t// Render nothing if no title or subtitle\n\tif (!props.title && !props.subtitle){\n    return null;\n  }\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "SectionHeader",
+      "nameStyleModule": "SectionHeader",
+      "modulePath": "src/components/SectionHeader"
+    },
+    {
+      "type": "component",
+      "name": "Background Image",
+      "id": 1986700,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "attributes": "{\n  style: {\n    '--image': `url(${props.image})`,\n    '--opacity': props.opacity\n  }\n}",
+          "style": "// Set using CSS vars defined\n// in element inline style.\nbackground-image: var(--image);\nopacity: var(--opacity);\n// Fill parent container\nbackground-position: center center;\nbackground-size: cover;\ntop: 0;\nleft: 0;\nbottom: 0;\nright: 0;\nposition: absolute;\n// Place under other elements\nz-index: 0;\n\n// Make it a repeating pattern\n&.repeat {\n  background-size: auto;\n  background-position: 0% 0%;\n  background-repeat: true;\n}",
+          "id": 4730303,
+          "classNameExpressions": [
+            {
+              "js": "props.repeat",
+              "classNames": [
+                "repeat"
+              ]
+            }
+          ],
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "classNames": [],
+          "children": [],
+          "propsArray": [
+            {
+              "key": "style",
+              "value": "{\n  '--image': `url(${props.image})`,\n  '--opacity': props.opacity\n}",
+              "isString": false,
+              "type": "ObjectExpression"
+            }
+          ]
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "BackgroundImage",
+      "nameStyleModule": "BackgroundImage",
+      "modulePath": "src/components/BackgroundImage"
+    },
+    {
+      "type": "component",
+      "name": "Features Section",
+      "id": 2678941,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 5415335,
+                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 3,\n  // Space between title/subtitle\n  spaced: true,\n  className: \"has-text-centered\"\n}",
+                  "id": 3938316,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "title",
+                      "value": "props.title",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "subtitle",
+                      "value": "props.subtitle",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "size",
+                      "value": "3",
+                      "isString": false,
+                      "type": "NumericLiteral"
+                    },
+                    {
+                      "key": "spaced",
+                      "value": "true",
+                      "isString": false,
+                      "type": "BooleanLiteral"
+                    },
+                    {
+                      "key": "className",
+                      "value": "has-text-centered",
+                      "isString": true,
+                      "type": "StringLiteral"
+                    }
+                  ]
+                }
+              ],
+              "id": 366285,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 3273645,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Features",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "FeaturesSection",
+      "nameStyleModule": "FeaturesSection",
+      "modulePath": "src/components/FeaturesSection"
+    },
+    {
+      "type": "component",
+      "name": "Centered Columns",
+      "id": 6198410,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "classNames": [
+            "columns",
+            "is-centered",
+            "is-variable",
+            "is-4",
+            "is-multiline"
+          ],
+          "children": [
+            {
+              "type": "children",
+              "id": 7476441,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "id": 2388015,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": "",
+          "propsArray": []
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "CenteredColumns",
+      "nameStyleModule": "CenteredColumns",
+      "modulePath": "src/components/CenteredColumns"
+    },
+    {
+      "type": "component",
+      "name": "Features Section",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 911192,
+                  "attributes": "{\n  items: [\n    {\n      title: 'Websites',\n      subtitle: \"While at Globant, I've been able to work with teams building web apps for clients like Disney, AirEuropa, WarnerMedia, among others. I've also made websites for other before that.\",\n      iconClass: 'fas fa-globe',\n      iconColor: 'info'\n    },\n    {\n      title: 'Businesses',\n      subtitle: \"I've helped small businesses get online to reach more customers and also family members and friends launch their own idea with what I know about web development & online marketing\",\n      iconClass: 'fas fa-briefcase',\n      iconColor: 'danger'\n    },\n    {\n      title: 'People',\n      subtitle: \"I've participated in various volunteering opportunities from Globant and found by myself, helping students from low resource communities develop their technical & interpersonal skills.\",\n      iconClass: 'fas fa-users',\n      iconColor: 'success'\n    },\n  ]\n}",
+                  "id": 3723074,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "items",
+                      "value": "[\n  {\n    title: 'Websites',\n    subtitle: \"While at Globant, I've been able to work with teams building web apps for clients like Disney, AirEuropa, WarnerMedia, among others. I've also made websites for other before that.\",\n    iconClass: 'fas fa-globe',\n    iconColor: 'info'\n  },\n  {\n    title: 'Businesses',\n    subtitle: \"I've helped small businesses get online to reach more customers and also family members and friends launch their own idea with what I know about web development & online marketing\",\n    iconClass: 'fas fa-briefcase',\n    iconColor: 'danger'\n  },\n  {\n    title: 'People',\n    subtitle: \"I've participated in various volunteering opportunities from Globant and found by myself, helping students from low resource communities develop their technical & interpersonal skills.\",\n    iconClass: 'fas fa-users',\n    iconColor: 'success'\n  },\n]",
+                      "isString": false,
+                      "type": "ArrayExpression"
+                    }
+                  ]
+                }
+              ],
+              "id": 1106960,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 3547921,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Features"
+      ],
+      "id": 3519938,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "FeaturesSection2",
+      "nameStyleModule": "FeaturesSection2",
+      "modulePath": "src/components/FeaturesSection2"
+    },
+    {
+      "type": "component",
+      "name": "Features",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 6198410,
+          "children": [
+            {
+              "type": "foreach",
+              "valName": "item",
+              "indexName": "index",
+              "objectName": "props.items",
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "column",
+                    "has-text-centered"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "id": 6912281,
+                      "style": "padding: 1rem 0.5rem;",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "classNames": [
+                            "icon",
+                            "is-size-1",
+                            "has-text-{item.iconColor}"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "i",
+                              "id": 8935243,
+                              "classNames": [
+                                "{item.iconClass}"
+                              ],
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": []
+                            }
+                          ],
+                          "id": 5754906,
+                          "style": "margin-bottom: 3rem;",
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "propsArray": []
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "h1",
+                          "classNames": [
+                            "title",
+                            "is-4",
+                            "is-spaced"
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "{item.title}",
+                              "id": 7801305,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "id": 9214235,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "h2",
+                          "classNames": [
+                            "subtitle",
+                            "is-6",
+                            "has-text-grey-darker"
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "{item.subtitle}",
+                              "id": 2741639,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "id": 9224231,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "name": "Feature",
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "propsArray": []
+                    }
+                  ],
+                  "attributes": "{\n\tkey: index\n}",
+                  "id": 8880430,
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": [
+                    {
+                      "key": "key",
+                      "value": "index",
+                      "isString": false,
+                      "type": "Identifier"
+                    }
+                  ]
+                }
+              ],
+              "id": 9181306,
+              "isVisible": true,
+              "objectType": "array"
+            }
+          ],
+          "id": 7499804,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "propsArray": []
+        }
+      ],
+      "id": 911192,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "Features",
+      "nameStyleModule": "Features",
+      "modulePath": "src/components/Features"
+    },
+    {
+      "type": "component",
+      "name": "Hero Section",
+      "id": 963629,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 5415335,
+                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 1,\n  // Space between title/subtitle\n  spaced: true,\n  className: \"has-text-centered\"\n}",
+                  "id": 4342289,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "title",
+                      "value": "props.title",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "subtitle",
+                      "value": "props.subtitle",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "size",
+                      "value": "1",
+                      "isString": false,
+                      "type": "NumericLiteral"
+                    },
+                    {
+                      "key": "spaced",
+                      "value": "true",
+                      "isString": false,
+                      "type": "BooleanLiteral"
+                    },
+                    {
+                      "key": "className",
+                      "value": "has-text-centered",
+                      "isString": true,
+                      "type": "StringLiteral"
+                    }
+                  ]
+                }
+              ],
+              "id": 2060107,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 8805486,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Hero",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "HeroSection",
+      "nameStyleModule": "HeroSection",
+      "modulePath": "src/components/HeroSection"
+    },
+    {
+      "type": "component",
+      "name": "Newsletter Section",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "columns",
+                    "is-centered"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-12",
+                        "is-10-fullhd"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "classNames": [
+                            "columns",
+                            "is-vcentered"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "div",
+                              "classNames": [
+                                "column",
+                                "is-half"
+                              ],
+                              "children": [
+                                {
+                                  "type": "instance",
+                                  "componentId": 5415335,
+                                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 3,\n  // Space between title/subtitle\n  spaced: false\n}",
+                                  "id": 7939365,
+                                  "isVisible": true,
+                                  "children": [],
+                                  "propsArray": [
+                                    {
+                                      "key": "title",
+                                      "value": "props.title",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "subtitle",
+                                      "value": "props.subtitle",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "size",
+                                      "value": "3",
+                                      "isString": false,
+                                      "type": "NumericLiteral"
+                                    },
+                                    {
+                                      "key": "spaced",
+                                      "value": "false",
+                                      "isString": false,
+                                      "type": "BooleanLiteral"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "id": 8254421,
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "propsArray": []
+                            },
+                            {
+                              "type": "element",
+                              "tagName": "div",
+                              "classNames": [
+                                "column",
+                                "is-half"
+                              ],
+                              "children": [
+                                {
+                                  "type": "instance",
+                                  "componentId": 4938296,
+                                  "id": 6723650,
+                                  "attributes": "{\n  parentColor: props.color,\n\tbuttonText: props.buttonText,\n  inputPlaceholder: props.inputPlaceholder,\n  subscribedMessage: props.subscribedMessage,\n\t// small, normal, medium, large\n  size: \"medium\"\n}",
+                                  "isVisible": true,
+                                  "children": [],
+                                  "propsArray": [
+                                    {
+                                      "key": "parentColor",
+                                      "value": "props.color",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "buttonText",
+                                      "value": "props.buttonText",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "inputPlaceholder",
+                                      "value": "props.inputPlaceholder",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "subscribedMessage",
+                                      "value": "props.subscribedMessage",
+                                      "isString": false,
+                                      "type": "MemberExpression"
+                                    },
+                                    {
+                                      "key": "size",
+                                      "value": "medium",
+                                      "isString": true,
+                                      "type": "StringLiteral"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "id": 4936903,
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "propsArray": []
+                            }
+                          ],
+                          "id": 3334129,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 5195628,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 6212138,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 6031473,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 8188011,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "id": 74477,
+      "code": "  ",
+      "tags": [
+        "Popular",
+        "Newsletter"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "nameFormatted": "NewsletterSection",
+      "nameStyleModule": "NewsletterSection",
+      "modulePath": "src/components/NewsletterSection"
+    },
+    {
+      "type": "component",
+      "name": "Section Button",
+      "id": 8669042,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "button",
+          "classNames": [
+            "button"
+          ],
+          "children": [
+            {
+              "type": "children",
+              "id": 776571,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "attributes": "{\n  ...otherProps\n}",
+          "classNameExpressions": [
+            {
+              "js": "['primary', 'info', 'success', 'warning', 'danger', 'black', 'dark'].includes(parentColor)",
+              "classNames": [
+                "is-{parentColor}",
+                "is-inverted"
+              ]
+            },
+            {
+              "js": " ['white', 'light'].includes(parentColor) || !parentColor",
+              "classNames": [
+                "is-primary"
+              ]
+            },
+            {
+              "js": "size",
+              "classNames": [
+                "is-{size}"
+              ]
+            },
+            {
+              "js": "state",
+              "classNames": [
+                "is-{state}"
+              ]
+            },
+            {
+              "js": "fullWidth",
+              "classNames": [
+                "is-fullwidth"
+              ]
+            }
+          ],
+          "id": 7815642,
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "style": "",
+          "propsArray": [
+            {
+              "key": null,
+              "value": "otherProps",
+              "isString": false,
+              "type": "SpreadElement"
+            }
+          ]
+        }
+      ],
+      "description": "A button whose color is determined by the background color of its parent component (passed in via `parentColor` prop).",
+      "code": "\tconst {\n    parentColor, \n    size, \n    state, \n    fullWidth,\n    // Passed to button element\n    ...otherProps\n  } = props;\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "tags": [],
+      "nameFormatted": "SectionButton",
+      "nameStyleModule": "SectionButton",
+      "modulePath": "src/components/SectionButton"
+    },
+    {
+      "type": "component",
+      "name": "Newsletter",
+      "children": [
+        {
+          "type": "if",
+          "js": "subscribed === false",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "form",
+              "attributes": "{\n  onSubmit: handleSubmit(onSubmit)\n}",
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "field",
+                    "is-grouped"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "control",
+                        "is-expanded"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "input",
+                          "attributes": "{\n  name: 'email',\n  type: 'email',\n  placeholder: props.inputPlaceholder,\n  ref: register({ \n    required: \"Please enter an email address\" \n  })\n}",
+                          "classNames": [
+                            "input",
+                            "is-{props.size}"
+                          ],
+                          "id": 2334275,
+                          "isVisible": true,
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": [],
+                          "propsArray": [
+                            {
+                              "key": "name",
+                              "value": "email",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            },
+                            {
+                              "key": "type",
+                              "value": "email",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            },
+                            {
+                              "key": "placeholder",
+                              "value": "props.inputPlaceholder",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "ref",
+                              "value": "register({ \n  required: \"Please enter an email address\" \n})",
+                              "isString": false,
+                              "type": "CallExpression"
+                            }
+                          ]
+                        }
+                      ],
+                      "id": 5348542,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "control"
+                      ],
+                      "children": [
+                        {
+                          "type": "instance",
+                          "componentId": 8669042,
+                          "attributes": "{\n\tparentColor: props.parentColor,\n  size: props.size,\n  type: \"submit\"\n}",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "{props.buttonText}",
+                              "id": 751726,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "id": 7377433,
+                          "isVisible": true,
+                          "propsArray": [
+                            {
+                              "key": "parentColor",
+                              "value": "props.parentColor",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "size",
+                              "value": "props.size",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "type",
+                              "value": "submit",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            }
+                          ]
+                        }
+                      ],
+                      "id": 568525,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 4088219,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                },
+                {
+                  "type": "if",
+                  "js": "errors.email",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "p",
+                      "classNames": [
+                        "help",
+                        "is-danger",
+                        "has-text-left"
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "{errors.email.message}",
+                          "id": 2546714,
+                          "isVisible": true,
+                          "children": []
+                        }
+                      ],
+                      "id": 797568,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 4057268,
+                  "isVisible": true
+                }
+              ],
+              "id": 9147691,
+              "isVisible": true,
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": [
+                {
+                  "key": "onSubmit",
+                  "value": "handleSubmit(onSubmit)",
+                  "isString": false,
+                  "type": "CallExpression"
+                }
+              ]
+            }
+          ],
+          "id": 2699611,
+          "isVisible": true
+        },
+        {
+          "type": "if",
+          "js": "subscribed === true",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 8436425,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "{props.subscribedMessage}",
+                  "id": 813004,
+                  "isVisible": true,
+                  "children": []
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 3854440,
+          "isVisible": true
+        }
+      ],
+      "id": 4938296,
+      "code": "\tconst [subscribed, setSubscribed] = useState(false);\n\tconst { handleSubmit, register, errors } = useForm();\n  \n\tconst onSubmit = ({ email }) => {\n    setSubscribed(true);\n    // Parent component can optionally\n    // find out when subscribed.\n    props.onSubscribed && props.onSubscribed();\n    // Subscribe them\n    newsletter.subscribe({ email });\n  }\n  ",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "Newsletter",
+      "nameStyleModule": "Newsletter",
+      "modulePath": "src/components/Newsletter"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 4913234,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n  color: \"white\",\n  // add extra padding\n  spaced: true,\n  // logo image url\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 5832025,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Navbar",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "spaced",
+              "value": "true",
+              "isString": false,
+              "type": "BooleanLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 963629,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"https://juanfrank77.github.io/portfolio/images/background.jpg\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Hi, I'm Juan Gonzalez\",\n  subtitle: \"Developer. Writer. Learner\",\n}",
+          "id": 7025915,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Hero Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "https://juanfrank77.github.io/portfolio/images/background.jpg",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Hi, I'm Juan Gonzalez",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "Developer. Writer. Learner",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 7454246,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"link\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Mini Bio\",\n  subtitle: \"This is where I write a very brief description about me and my trajectory.\",\n  buttonText: \"See more about me\",\n  // Image on right\n  image: 'https://avatars2.githubusercontent.com/u/12146882?s=460&u=b153ac0c446ac31c230cfe6b1a98bd54ca74e39a&v=4',\n  // Button onClick handler\n  buttonOnClick: () => {\n    // Navigate to pricing page\n    router.push('/about');\n  }\n}",
+          "id": 5101107,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Hero Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "link",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Mini Bio",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "This is where I write a very brief description about me and my trajectory.",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonText",
+              "value": "See more about me",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "image",
+              "value": "https://avatars2.githubusercontent.com/u/12146882?s=460&u=b153ac0c446ac31c230cfe6b1a98bd54ca74e39a&v=4",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonOnClick",
+              "value": "() => {\n  // Navigate to pricing page\n  router.push('/about');\n}",
+              "isString": false,
+              "type": "ArrowFunctionExpression"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 2678941,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n\ttitle: \"What I develop\"\n}",
+          "id": 1007473,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Features Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "What I develop",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 3519938,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1\n}",
+          "id": 2084895,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Features Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 7454246,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"info\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Currently doing\",\n  subtitle: \"This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan.\",\n  buttonText: \"See what's now\",\n  // Image on right\n  image: '',\n  // Button onClick handler\n  buttonOnClick: () => {\n    // Navigate to pricing page\n    router.push('/now');\n  }\n}",
+          "id": 1550728,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Hero Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "info",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Currently doing",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "This landing page is perfect for showing off your awesome product and driving people to sign up for a paid plan.",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonText",
+              "value": "See what's now",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "image",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonOnClick",
+              "value": "() => {\n  // Navigate to pricing page\n  router.push('/now');\n}",
+              "isString": false,
+              "type": "ArrowFunctionExpression"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 74477,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Stay in the know\",\n  subtitle: \"Receive our latest articles and feature updates\",\n  buttonText: \"Subscribe\",\n  inputPlaceholder: \"Enter your email\",\n  subscribedMessage: \"You are now subscribed!\"\n}",
+          "id": 5017270,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Newsletter Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Stay in the know",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "Receive our latest articles and feature updates",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonText",
+              "value": "Subscribe",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "inputPlaceholder",
+              "value": "Enter your email",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subscribedMessage",
+              "value": "You are now subscribed!",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 203216,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"light\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n\t// Text content\n  copyright: '© 2020 Juan F Gonzalez',\n  // Logo image URL\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 3839625,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Footer",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "light",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "copyright",
+              "value": "© 2020 Juan F Gonzalez",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        }
+      ],
+      "id": 8934968,
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false,
+      "nameFormatted": "IndexPage",
+      "nameStyleModule": "IndexPage",
+      "modulePath": "src/pages/index"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "about",
+      "id": 6628204,
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 4913234,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n  color: \"white\",\n  // add extra padding\n  spaced: true,\n  // logo image url\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 6649312,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Navbar",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "spaced",
+              "value": "true",
+              "isString": false,
+              "type": "BooleanLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 4641073,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Craft beer delivered right to your door\",\n  subtitle: \"What if instead of normal mail, you got normal mail and also beer sometimes. We can make that happen.\",\n  buttonText: \"Count me in\",\n  // Image on left\n  image: 'https://uploads.divjoy.com/undraw-beer_celebration_cefj.svg',\n  // Button onClick handler\n  buttonOnClick: () => {\n   \t// Navigate to pricing page\n    router.push('/pricing');\n  }\n}",
+          "id": 6988226,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Hero Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Craft beer delivered right to your door",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "What if instead of normal mail, you got normal mail and also beer sometimes. We can make that happen.",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonText",
+              "value": "Count me in",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "image",
+              "value": "https://uploads.divjoy.com/undraw-beer_celebration_cefj.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonOnClick",
+              "value": "() => {\n  // Navigate to pricing page\n  router.push('/pricing');\n}",
+              "isString": false,
+              "type": "ArrowFunctionExpression"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 203216,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"light\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n\t// Text content\n  copyright: '© 2020 Juan F Gonzalez',\n  // Logo image URL\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 3198571,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Footer",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "light",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "copyright",
+              "value": "© 2020 Juan F Gonzalez",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        }
+      ],
+      "nameFormatted": "AboutPage",
+      "nameStyleModule": "AboutPage",
+      "modulePath": "src/pages/about"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "now",
+      "id": 3412667,
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 4913234,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n  color: \"white\",\n  // add extra padding\n  spaced: true,\n  // logo image url\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 853589,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Navbar",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "spaced",
+              "value": "true",
+              "isString": false,
+              "type": "BooleanLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 1166901,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n  title: \"Features\",\n  subtitle: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.\"\n}",
+          "id": 3132488,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Features Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Features",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 203216,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"light\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n\t// Text content\n  copyright: '© 2020 Juan F Gonzalez',\n  // Logo image URL\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 3884631,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Footer",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "light",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "copyright",
+              "value": "© 2020 Juan F Gonzalez",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        }
+      ],
+      "nameFormatted": "NowPage",
+      "nameStyleModule": "NowPage",
+      "modulePath": "src/pages/now"
+    },
+    {
+      "type": "component",
+      "name": "Footer",
+      "id": 203216,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity,\n  className: \"footer\"\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "copyright",
+                    "align-left"
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "{props.copyright}",
+                      "id": 9660171,
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "id": 531660,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                },
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "social",
+                    "align-right"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "classNames": [
+                            "icon"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "i",
+                              "classNames": [
+                                "fab",
+                                "fa-twitter"
+                              ],
+                              "id": 6283470,
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": []
+                            }
+                          ],
+                          "id": 3994074,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "attributes": "{\n\thref: 'https://twitter.com/juanfrank77',\n\ttarget: '_blank',\n  rel: 'noopener noreferrer'\n}",
+                      "id": 8489828,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": [
+                        {
+                          "key": "href",
+                          "value": "https://twitter.com/juanfrank77",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "target",
+                          "value": "_blank",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "rel",
+                          "value": "noopener noreferrer",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "classNames": [
+                            "icon"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "i",
+                              "classNames": [
+                                "fab",
+                                "fa-linkedin-in"
+                              ],
+                              "id": 8936496,
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": []
+                            }
+                          ],
+                          "id": 3232684,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "attributes": "{\n\thref: 'https://linkedin.com/in/juanfrank77',\n\ttarget: '_blank',\n  rel: 'noopener noreferrer'\n}",
+                      "id": 7606899,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": [
+                        {
+                          "key": "href",
+                          "value": "https://linkedin.com/in/juanfrank77",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "target",
+                          "value": "_blank",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "rel",
+                          "value": "noopener noreferrer",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "span",
+                          "classNames": [
+                            "icon"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "i",
+                              "classNames": [
+                                "fab",
+                                "fa-github"
+                              ],
+                              "id": 8331840,
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": []
+                            }
+                          ],
+                          "id": 2925991,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "attributes": "{\n\thref: 'https://github.com/juanfrank77',\n\ttarget: '_blank',\n  rel: 'noopener noreferrer'\n}",
+                      "id": 2600085,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": [
+                        {
+                          "key": "href",
+                          "value": "https://github.com/juanfrank77",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "target",
+                          "value": "_blank",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "rel",
+                          "value": "noopener noreferrer",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 617938,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "style": "display: flex;\nflex-wrap: wrap;\n> div {\n  display: flex;\n  flex: none;\n  justify-content: center;\n  width: 100%;\n  margin-bottom: 24px;\n}\n\n.social {\n  align-items: flex-end;\n}\n\n.social {\n  a {\n    color: inherit;\n    &:hover {\n      opacity: 0.8;\n    }\n\n    &:not(:first-of-type) {\n      margin-left: 20px;\n    }\n  }\n}\n\n// Tablet and up\n@media screen and (min-width: 769px) {\n  > div {\n    flex: 50%;\n  }\n\n  .align-left {\n    justify-content: flex-start;\n  }\n\n  .align-right {\n    justify-content: flex-end;\n  }\n}",
+              "id": 4190157,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "propsArray": []
+            }
+          ],
+          "id": 4337160,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "className",
+              "value": "footer",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Footer",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "Footer",
+      "nameStyleModule": "FooterComponent",
+      "modulePath": "src/components/Footer"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "contact",
+      "id": 3780013,
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 4913234,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n  color: \"white\",\n  // add extra padding\n  spaced: true,\n  // logo image url\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 427935,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Navbar",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "spaced",
+              "value": "true",
+              "isString": false,
+              "type": "BooleanLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 4150400,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"white\",\n  // normal, medium, large\n  size: \"medium\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n  // Text content\n\ttitle: \"Contact me\",\n  subtitle: \"\",\n  buttonText: \"Send message\",\n  showNameField: true\n}",
+          "id": 4080208,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Contact Section",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "white",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "medium",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "title",
+              "value": "Contact me",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "subtitle",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "buttonText",
+              "value": "Send message",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "showNameField",
+              "value": "true",
+              "isString": false,
+              "type": "BooleanLiteral"
+            }
+          ]
+        },
+        {
+          "type": "instance",
+          "componentId": 203216,
+          "attributes": "{\n  // primary, link, info, success, warning, \n  // danger, white, light, dark, black\n\tcolor: \"light\",\n  // normal, medium, large\n  size: \"normal\",\n  // Background image URL\n  backgroundImage: \"\",\n  // Background image opacity (0-1)\n  backgroundImageOpacity: 1,\n\t// Text content\n  copyright: '© 2020 Juan F Gonzalez',\n  // Logo image URL\n  logo: 'https://uploads.divjoy.com/logo.svg'\n}",
+          "id": 903125,
+          "isVisible": true,
+          "children": [],
+          "libraryName": "Footer",
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "light",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "size",
+              "value": "normal",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "1",
+              "isString": false,
+              "type": "NumericLiteral"
+            },
+            {
+              "key": "copyright",
+              "value": "© 2020 Juan F Gonzalez",
+              "isString": true,
+              "type": "StringLiteral"
+            },
+            {
+              "key": "logo",
+              "value": "https://uploads.divjoy.com/logo.svg",
+              "isString": true,
+              "type": "StringLiteral"
+            }
+          ]
+        }
+      ],
+      "nameFormatted": "ContactPage",
+      "nameStyleModule": "ContactPage",
+      "modulePath": "src/pages/contact"
+    },
+    {
+      "type": "component",
+      "name": "Form Field",
+      "id": 2768808,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "classNames": [
+            "field"
+          ],
+          "children": [
+            {
+              "type": "if",
+              "js": "props.label",
+              "id": 6158054,
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "label",
+                  "id": 3618406,
+                  "attributes": "{\n\thtmlFor: props.id\n}",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "{props.label}",
+                      "id": 4430005,
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "classNames": [
+                    "label"
+                  ],
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": [
+                    {
+                      "key": "htmlFor",
+                      "value": "props.id",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    }
+                  ]
+                }
+              ],
+              "isVisible": true
+            },
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "control"
+              ],
+              "children": [
+                {
+                  "type": "if",
+                  "js": "type === \"textarea\"",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "textarea",
+                      "attributes": "{\n  ref: inputRef,\n  ...inputProps\n}",
+                      "classNames": [
+                        "textarea",
+                        "is-medium"
+                      ],
+                      "id": 398205,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "children": [],
+                      "propsArray": [
+                        {
+                          "key": "ref",
+                          "value": "inputRef",
+                          "isString": false,
+                          "type": "Identifier"
+                        },
+                        {
+                          "key": null,
+                          "value": "inputProps",
+                          "isString": false,
+                          "type": "SpreadElement"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 6549474,
+                  "isVisible": true
+                },
+                {
+                  "type": "if",
+                  "js": "type !== \"textarea\"",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "input",
+                      "attributes": "{\n  ref: inputRef,\n  type: type,\n  ...inputProps\n}",
+                      "classNames": [
+                        "input",
+                        "is-medium"
+                      ],
+                      "id": 889978,
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "children": [],
+                      "propsArray": [
+                        {
+                          "key": "ref",
+                          "value": "inputRef",
+                          "isString": false,
+                          "type": "Identifier"
+                        },
+                        {
+                          "key": "type",
+                          "value": "type",
+                          "isString": false,
+                          "type": "Identifier"
+                        },
+                        {
+                          "key": null,
+                          "value": "inputProps",
+                          "isString": false,
+                          "type": "SpreadElement"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 6476692,
+                  "isVisible": true
+                }
+              ],
+              "id": 5235996,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            },
+            {
+              "type": "if",
+              "js": "error",
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "p",
+                  "classNames": [
+                    "help",
+                    "is-danger"
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "{error.message}",
+                      "id": 5299485,
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "id": 9601294,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 1823889,
+              "isVisible": true
+            }
+          ],
+          "id": 1060601,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": "",
+          "propsArray": []
+        }
+      ],
+      "code": "\tconst { error, type, inputRef, ...inputProps } = props;\n",
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "FormField",
+      "nameStyleModule": "FormField",
+      "modulePath": "src/components/FormField"
+    },
+    {
+      "type": "component",
+      "name": "Contact Section",
+      "id": 4150400,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 5415335,
+                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 3,\n  // Space between title/subtitle\n  spaced: true,\n  className: \"has-text-centered\"\n}",
+                  "id": 4071896,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "title",
+                      "value": "props.title",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "subtitle",
+                      "value": "props.subtitle",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "size",
+                      "value": "3",
+                      "isString": false,
+                      "type": "NumericLiteral"
+                    },
+                    {
+                      "key": "spaced",
+                      "value": "true",
+                      "isString": false,
+                      "type": "BooleanLiteral"
+                    },
+                    {
+                      "key": "className",
+                      "value": "has-text-centered",
+                      "isString": true,
+                      "type": "StringLiteral"
+                    }
+                  ]
+                },
+                {
+                  "type": "instance",
+                  "componentId": 2896856,
+                  "attributes": "{\n  parentColor: props.parentColor,\n  showNameField: props.showNameField,\n  buttonText: props.buttonText\n}",
+                  "id": 7744584,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "parentColor",
+                      "value": "props.parentColor",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "showNameField",
+                      "value": "props.showNameField",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "buttonText",
+                      "value": "props.buttonText",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    }
+                  ]
+                }
+              ],
+              "style": "max-width: 850px;",
+              "id": 2533263,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "propsArray": []
+            }
+          ],
+          "id": 5180594,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Contact",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "ContactSection",
+      "nameStyleModule": "ContactSection",
+      "modulePath": "src/components/ContactSection"
+    },
+    {
+      "type": "component",
+      "name": "Contact",
+      "code": "\tconst [pending, setPending] = useState(false);\n\tconst [formAlert, setFormAlert] = useState(null);\n\tconst { handleSubmit, register, errors, reset } = useForm();\t\t\n\n  const onSubmit = (data) => {\n    // Show pending indicator\n    setPending(true);\n    \n    contact.submit(data)\n    \t.then(() => {\n      \t// Clear form\n      \treset();\n      \t// Show success alert message\n      \tsetFormAlert({\n        \ttype: \"success\",\n        \tmessage: \"Your message has been sent!\"\n      \t});\n    \t})\n    \t.catch(error => {\n      \t// Show error alert message\n      \tsetFormAlert({\n        \ttype: \"error\",\n        \tmessage: error.message\n      \t});\n    \t})\n    \t.finally(() => {\n      \t// Hide pending indicator\n        setPending(false);\n    \t});\n  }\n  ",
+      "id": 2896856,
+      "children": [
+        {
+          "type": "if",
+          "js": "formAlert",
+          "children": [
+            {
+              "type": "instance",
+              "componentId": 8324765,
+              "attributes": "{\n\ttype: formAlert.type,\n  message: formAlert.message\n}",
+              "id": 114896,
+              "isVisible": true,
+              "children": [],
+              "propsArray": [
+                {
+                  "key": "type",
+                  "value": "formAlert.type",
+                  "isString": false,
+                  "type": "MemberExpression"
+                },
+                {
+                  "key": "message",
+                  "value": "formAlert.message",
+                  "isString": false,
+                  "type": "MemberExpression"
+                }
+              ]
+            }
+          ],
+          "id": 1815689,
+          "isVisible": true
+        },
+        {
+          "type": "element",
+          "tagName": "form",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "field",
+                "is-horizontal"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "field-body"
+                  ],
+                  "children": [
+                    {
+                      "type": "if",
+                      "js": "props.showNameField",
+                      "children": [
+                        {
+                          "type": "instance",
+                          "componentId": 2768808,
+                          "attributes": "{\n  name: 'name',\n  type: 'text',\n  placeholder: 'Name',\n\terror: errors.name,\n  inputRef: register({ \n    required: \"Please enter your name\"\n  })\n}",
+                          "id": 4532532,
+                          "isVisible": true,
+                          "children": [],
+                          "propsArray": [
+                            {
+                              "key": "name",
+                              "value": "name",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            },
+                            {
+                              "key": "type",
+                              "value": "text",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            },
+                            {
+                              "key": "placeholder",
+                              "value": "Name",
+                              "isString": true,
+                              "type": "StringLiteral"
+                            },
+                            {
+                              "key": "error",
+                              "value": "errors.name",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "inputRef",
+                              "value": "register({ \n  required: \"Please enter your name\"\n})",
+                              "isString": false,
+                              "type": "CallExpression"
+                            }
+                          ]
+                        }
+                      ],
+                      "id": 2002727,
+                      "isVisible": true
+                    },
+                    {
+                      "type": "instance",
+                      "componentId": 2768808,
+                      "attributes": "{\n  name: 'email',\n  type: 'email',\n  placeholder: 'Email',\n\terror: errors.email,\n  inputRef: register({ \n    required: \"Please enter your email\"\n  })\n}",
+                      "id": 6729270,
+                      "isVisible": true,
+                      "children": [],
+                      "propsArray": [
+                        {
+                          "key": "name",
+                          "value": "email",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "type",
+                          "value": "email",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Email",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "error",
+                          "value": "errors.email",
+                          "isString": false,
+                          "type": "MemberExpression"
+                        },
+                        {
+                          "key": "inputRef",
+                          "value": "register({ \n  required: \"Please enter your email\"\n})",
+                          "isString": false,
+                          "type": "CallExpression"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 8382708,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 365257,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            },
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "field",
+                "is-horizontal"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "field-body"
+                  ],
+                  "children": [
+                    {
+                      "type": "instance",
+                      "componentId": 2768808,
+                      "attributes": "{\n  name: 'message',\n  type: 'textarea',\n  placeholder: 'Message',\n  rows: 5,\n\terror: errors.message,\n  inputRef: register({ \n    required: \"Please enter a message\"\n  })\n}",
+                      "id": 8365187,
+                      "isVisible": true,
+                      "children": [],
+                      "propsArray": [
+                        {
+                          "key": "name",
+                          "value": "message",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "type",
+                          "value": "textarea",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Message",
+                          "isString": true,
+                          "type": "StringLiteral"
+                        },
+                        {
+                          "key": "rows",
+                          "value": "5",
+                          "isString": false,
+                          "type": "NumericLiteral"
+                        },
+                        {
+                          "key": "error",
+                          "value": "errors.message",
+                          "isString": false,
+                          "type": "MemberExpression"
+                        },
+                        {
+                          "key": "inputRef",
+                          "value": "register({ \n  required: \"Please enter a message\"\n})",
+                          "isString": false,
+                          "type": "CallExpression"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": 8359098,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 1359873,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            },
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "field",
+                "is-horizontal"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "field-body"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "field"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "classNames": [
+                            "control"
+                          ],
+                          "children": [
+                            {
+                              "type": "instance",
+                              "componentId": 8669042,
+                              "attributes": "{\n\tparentColor: props.parentColor,\n  size: \"medium\",\n  state: pending ? 'loading' : 'normal'\n}",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{props.buttonText}",
+                                  "id": 9112618,
+                                  "isVisible": true,
+                                  "children": []
+                                }
+                              ],
+                              "id": 8423764,
+                              "isVisible": true,
+                              "propsArray": [
+                                {
+                                  "key": "parentColor",
+                                  "value": "props.parentColor",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "medium",
+                                  "isString": true,
+                                  "type": "StringLiteral"
+                                },
+                                {
+                                  "key": "state",
+                                  "value": "pending ? 'loading' : 'normal'",
+                                  "isString": false,
+                                  "type": "ConditionalExpression"
+                                }
+                              ]
+                            }
+                          ],
+                          "id": 2553172,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 4119607,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 7385159,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 3883,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "attributes": "{\n  onSubmit: handleSubmit(onSubmit)\n}",
+          "id": 980695,
+          "isVisible": true,
+          "image": "",
+          "name": "",
+          "classNames": [],
+          "classNameExpressions": [],
+          "style": "",
+          "propsArray": [
+            {
+              "key": "onSubmit",
+              "value": "handleSubmit(onSubmit)",
+              "isString": false,
+              "type": "CallExpression"
+            }
+          ]
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "nameFormatted": "Contact",
+      "nameStyleModule": "Contact",
+      "modulePath": "src/components/Contact"
+    },
+    {
+      "type": "component",
+      "name": "Form Alert",
+      "id": 8324765,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "classNames": [
+            "notification"
+          ],
+          "classNameExpressions": [
+            {
+              "js": "props.type === \"error\"",
+              "classNames": [
+                "is-danger"
+              ]
+            },
+            {
+              "js": "props.type === \"success\"",
+              "classNames": [
+                "is-success"
+              ]
+            }
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "{props.message}",
+              "id": 6208534,
+              "isVisible": true,
+              "children": []
+            }
+          ],
+          "id": 2491376,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "style": "",
+          "propsArray": []
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "FormAlert",
+      "nameStyleModule": "FormAlert",
+      "modulePath": "src/components/FormAlert"
+    },
+    {
+      "type": "component",
+      "name": "Hero Section",
+      "id": 7454246,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "columns",
+                    "is-vcentered",
+                    "is-desktop"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-5-desktop",
+                        "has-text-centered-touch"
+                      ],
+                      "children": [
+                        {
+                          "type": "instance",
+                          "componentId": 5415335,
+                          "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 3,\n  // Space between title/subtitle\n  spaced: true\n}",
+                          "id": 2326079,
+                          "isVisible": true,
+                          "children": [],
+                          "propsArray": [
+                            {
+                              "key": "title",
+                              "value": "props.title",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "subtitle",
+                              "value": "props.subtitle",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "size",
+                              "value": "3",
+                              "isString": false,
+                              "type": "NumericLiteral"
+                            },
+                            {
+                              "key": "spaced",
+                              "value": "true",
+                              "isString": false,
+                              "type": "BooleanLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "classNames": [
+                            "buttons",
+                            "is-inline-flex"
+                          ],
+                          "children": [
+                            {
+                              "type": "instance",
+                              "componentId": 8669042,
+                              "attributes": "{\n\tparentColor: props.color,\n  // small, normal, medium, large\n  size: \"medium\",\n  onClick: props.buttonOnClick\n}",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{props.buttonText}",
+                                  "id": 3887774,
+                                  "isVisible": true,
+                                  "children": []
+                                }
+                              ],
+                              "id": 9572835,
+                              "isVisible": true,
+                              "propsArray": [
+                                {
+                                  "key": "parentColor",
+                                  "value": "props.color",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "medium",
+                                  "isString": true,
+                                  "type": "StringLiteral"
+                                },
+                                {
+                                  "key": "onClick",
+                                  "value": "props.buttonOnClick",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                }
+                              ]
+                            }
+                          ],
+                          "id": 4497563,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 6733235,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-1"
+                      ],
+                      "name": "Spacer",
+                      "id": 8571842,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "children": [],
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 3243841,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 580002,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 8181092,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Popular",
+        "Hero"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "HeroSection2",
+      "nameStyleModule": "HeroSection2",
+      "modulePath": "src/components/HeroSection2"
+    },
+    {
+      "type": "component",
+      "name": "Hero Section",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "columns",
+                    "is-vcentered",
+                    "is-desktop"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "figure",
+                          "classNames": [
+                            "image"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "img",
+                              "attributes": "{\n  src: props.image,\n  alt: \"Illustration\"\n}",
+                              "id": 9130848,
+                              "isVisible": true,
+                              "image": "",
+                              "name": "",
+                              "classNames": [],
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": [
+                                {
+                                  "key": "src",
+                                  "value": "props.image",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "alt",
+                                  "value": "Illustration",
+                                  "isString": true,
+                                  "type": "StringLiteral"
+                                }
+                              ]
+                            }
+                          ],
+                          "style": "margin: 0 auto;\nmax-width: 570px;",
+                          "id": 9135805,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 1825707,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-1"
+                      ],
+                      "name": "Spacer",
+                      "id": 6136454,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "children": [],
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-6-desktop",
+                        "has-text-centered-touch"
+                      ],
+                      "children": [
+                        {
+                          "type": "instance",
+                          "componentId": 5415335,
+                          "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 1,\n  // Space between title/subtitle\n  spaced: true\n}",
+                          "id": 5244956,
+                          "isVisible": true,
+                          "children": [],
+                          "propsArray": [
+                            {
+                              "key": "title",
+                              "value": "props.title",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "subtitle",
+                              "value": "props.subtitle",
+                              "isString": false,
+                              "type": "MemberExpression"
+                            },
+                            {
+                              "key": "size",
+                              "value": "1",
+                              "isString": false,
+                              "type": "NumericLiteral"
+                            },
+                            {
+                              "key": "spaced",
+                              "value": "true",
+                              "isString": false,
+                              "type": "BooleanLiteral"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "classNames": [
+                            "buttons",
+                            "is-inline-flex"
+                          ],
+                          "children": [
+                            {
+                              "type": "instance",
+                              "componentId": 8669042,
+                              "attributes": "{\n\tparentColor: props.color,\n  // small, normal, medium, large\n  size: \"medium\",\n  onClick: props.buttonOnClick\n}",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{props.buttonText}",
+                                  "id": 7597000,
+                                  "isVisible": true,
+                                  "children": []
+                                }
+                              ],
+                              "id": 2335604,
+                              "isVisible": true,
+                              "propsArray": [
+                                {
+                                  "key": "parentColor",
+                                  "value": "props.color",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "size",
+                                  "value": "medium",
+                                  "isString": true,
+                                  "type": "StringLiteral"
+                                },
+                                {
+                                  "key": "onClick",
+                                  "value": "props.buttonOnClick",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                }
+                              ]
+                            }
+                          ],
+                          "id": 4379777,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 65393,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 2705389,
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": "",
+                  "propsArray": []
+                }
+              ],
+              "id": 7289894,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 6460399,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Hero"
+      ],
+      "id": 4641073,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "HeroSection3",
+      "nameStyleModule": "HeroSection3",
+      "modulePath": "src/components/HeroSection3"
+    },
+    {
+      "type": "component",
+      "name": "Features Section",
+      "id": 1166901,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 1079246,
+          "attributes": "{\n\tcolor: props.color,\n  size: props.size,\n  backgroundImage: props.backgroundImage,\n  backgroundImageOpacity: props.backgroundImageOpacity\n}",
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "classNames": [
+                "container"
+              ],
+              "children": [
+                {
+                  "type": "instance",
+                  "componentId": 5415335,
+                  "attributes": "{\n\ttitle: props.title,\n  subtitle: props.subtitle,\n  // Text size (1-6)\n  size: 3,\n  // Space between title/subtitle\n  spaced: true,\n  className: \"has-text-centered\"\n}",
+                  "id": 5566068,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "title",
+                      "value": "props.title",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "subtitle",
+                      "value": "props.subtitle",
+                      "isString": false,
+                      "type": "MemberExpression"
+                    },
+                    {
+                      "key": "size",
+                      "value": "3",
+                      "isString": false,
+                      "type": "NumericLiteral"
+                    },
+                    {
+                      "key": "spaced",
+                      "value": "true",
+                      "isString": false,
+                      "type": "BooleanLiteral"
+                    },
+                    {
+                      "key": "className",
+                      "value": "has-text-centered",
+                      "isString": true,
+                      "type": "StringLiteral"
+                    }
+                  ]
+                },
+                {
+                  "type": "instance",
+                  "componentId": 8535752,
+                  "attributes": "{\n  items: [\n    {\n      title: \"Explore\",\n      description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n      image: \"https://uploads.divjoy.com/undraw-mind_map_cwng.svg\"\n    },\n    {\n      title: \"Explore\",\n      description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n      image: \"https://uploads.divjoy.com/undraw-personal_settings_kihd.svg\"\n    },\n    {\n      title: \"Explore\",\n      description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n      image: \"https://uploads.divjoy.com/undraw-having_fun_iais.svg\"\n    },\n    {\n      title: \"Explore\",\n      description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n      image: \"https://uploads.divjoy.com/undraw-balloons_vxx5.svg\"\n    }\n  ]\n}",
+                  "id": 753221,
+                  "isVisible": true,
+                  "children": [],
+                  "propsArray": [
+                    {
+                      "key": "items",
+                      "value": "[\n  {\n    title: \"Explore\",\n    description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n    image: \"https://uploads.divjoy.com/undraw-mind_map_cwng.svg\"\n  },\n  {\n    title: \"Explore\",\n    description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n    image: \"https://uploads.divjoy.com/undraw-personal_settings_kihd.svg\"\n  },\n  {\n    title: \"Explore\",\n    description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n    image: \"https://uploads.divjoy.com/undraw-having_fun_iais.svg\"\n  },\n  {\n    title: \"Explore\",\n    description: \"Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.\",\n    image: \"https://uploads.divjoy.com/undraw-balloons_vxx5.svg\"\n  }\n]",
+                      "isString": false,
+                      "type": "ArrayExpression"
+                    }
+                  ]
+                }
+              ],
+              "id": 2630198,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": "",
+              "propsArray": []
+            }
+          ],
+          "id": 7879233,
+          "isVisible": true,
+          "propsArray": [
+            {
+              "key": "color",
+              "value": "props.color",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "size",
+              "value": "props.size",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImage",
+              "value": "props.backgroundImage",
+              "isString": false,
+              "type": "MemberExpression"
+            },
+            {
+              "key": "backgroundImageOpacity",
+              "value": "props.backgroundImageOpacity",
+              "isString": false,
+              "type": "MemberExpression"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "Features",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "nameFormatted": "FeaturesSection3",
+      "nameStyleModule": "FeaturesSection3",
+      "modulePath": "src/components/FeaturesSection3"
+    },
+    {
+      "type": "component",
+      "name": "Features",
+      "id": 8535752,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "style": "max-width: 900px;\nmargin: 80px auto 0 auto;",
+          "children": [
+            {
+              "type": "foreach",
+              "valName": "item",
+              "indexName": "index",
+              "objectName": "props.items",
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "classNames": [
+                    "columns",
+                    "is-variable",
+                    "is-8",
+                    "is-vcentered",
+                    "has-text-centered-mobile"
+                  ],
+                  "style": "// Reverse every other row\n&:nth-of-type(even) {\n  flex-direction: row-reverse;\n}\n\n&:not(:last-of-type) {\n  padding-bottom: 1.5rem;\n  @media screen and (min-width: 769px) {\n    padding-bottom: 2.5rem;\n  }\n}",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column",
+                        "is-half"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "h3",
+                          "classNames": [
+                            "title",
+                            "has-text-weight-bold",
+                            "is-spaced",
+                            "is-3"
+                          ],
+                          "style": "margin-bottom: 1.2rem !important;",
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "{item.title}",
+                              "id": 967800,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "id": 9683929,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "propsArray": []
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "p",
+                          "classNames": [
+                            "subtitle"
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "text": "{item.description}",
+                              "id": 4810067,
+                              "isVisible": true,
+                              "children": []
+                            }
+                          ],
+                          "id": 1911482,
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 836366,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "classNames": [
+                        "column"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "figure",
+                          "classNames": [
+                            "image"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "img",
+                              "attributes": "{\n  src: item.image,\n  alt: item.title\n}",
+                              "id": 8166672,
+                              "isVisible": true,
+                              "image": "",
+                              "name": "",
+                              "classNames": [],
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": [],
+                              "propsArray": [
+                                {
+                                  "key": "src",
+                                  "value": "item.image",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                },
+                                {
+                                  "key": "alt",
+                                  "value": "item.title",
+                                  "isString": false,
+                                  "type": "MemberExpression"
+                                }
+                              ]
+                            }
+                          ],
+                          "id": 2009629,
+                          "style": "max-width: 300px;\nmargin: 30px auto;",
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "propsArray": []
+                        }
+                      ],
+                      "id": 5005051,
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": "",
+                      "propsArray": []
+                    }
+                  ],
+                  "id": 7839467,
+                  "attributes": "{\n\tkey: index\n}",
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "propsArray": [
+                    {
+                      "key": "key",
+                      "value": "index",
+                      "isString": false,
+                      "type": "Identifier"
+                    }
+                  ]
+                }
+              ],
+              "id": 426775,
+              "isVisible": true,
+              "objectType": "array"
+            }
+          ],
+          "id": 2124975,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNames": [],
+          "classNameExpressions": [],
+          "propsArray": []
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "nameFormatted": "Features2",
+      "nameStyleModule": "Features2",
+      "modulePath": "src/components/Features2"
+    }
+  ]
+}
